@@ -77,8 +77,6 @@ Z3-dev
 Z3-staticdev
 zlib-dev
 zlib-staticdev
-ncurses
-ncurses-dev
 gcc
 gcc-abi
 gcc-bin
