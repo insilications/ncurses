@@ -1,7 +1,7 @@
 --enable-static
 --with-shared
 --with-termlib
---with-progs
+--enable-widec
 --enable-pc-files
 --with-pkg-config=/usr/bin/pkg-config
 --with-abi-version=6
@@ -12,3 +12,6 @@
 --with-versioned-syms
 --enable-colorfgbg
 --enable-hard-tabs
+--enable-echo
+--disable-stripping
+--without-tests

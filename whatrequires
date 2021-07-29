@@ -1,0 +1,10 @@
+# This file contains recursive sources that require this package
+OpenIPMI-dev
+Pacemaker-dev
+ncurses-dev
+ncurses-dev32
+readline-dev
+readline-dev32
+readline-staticdev
+readline-staticdev32
+rxvt-unicode

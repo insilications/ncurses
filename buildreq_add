@@ -3,10 +3,13 @@
 # desirable. One name per line, no whitespace.
 #
 autogen
+automake
 binutils-dev
 binutils-extras
 bison
 buildreq-configure
+cppcheck
+ctags
 dejagnu
 docbook-utils
 docbook-xml
@@ -15,10 +18,8 @@ elfutils-dev
 expect
 flex
 gcc
-gcc-bin
 gcc-dev
 gcc-dev32
-gcc-doc
 gcc-libgcc32
 gcc-libs-math
 gcc-libstdc++32
@@ -27,7 +28,6 @@ gcc-locale
 gdb-dev
 gettext
 git
-glibc-abi
 glibc-bench
 glibc-bin
 glibc-dev
@@ -42,6 +42,7 @@ glibc-staticdev
 glibc-utils
 gmp-dev
 gmp-staticdev
+gpm-dev
 graphviz
 grep
 guile
@@ -56,6 +57,7 @@ libunwind-dev
 libxml2-dev
 libxml2-staticdev
 libxslt
+m4
 mpc-dev
 mpfr-dev
 perl
@@ -73,26 +75,5 @@ xz-dev
 xz-staticdev
 yaml
 yaml-cpp
-Z3-dev
-Z3-staticdev
 zlib-dev
 zlib-staticdev
-gcc
-gcc-abi
-gcc-bin
-gcc-data
-gcc-dev
-gcc-dev32
-gcc-doc
-gcc-lib
-gcc-lib32
-gcc-libgcc32
-gcc-libs-math
-gcc-libstdc++32
-gcc-libubsan
-gcc-locale
-gcc-man
-gcc-staticdev
-gcc-staticdev32
-libgcc1
-libstdc++

@@ -1,5 +1,6 @@
 PKG_NAME := ncurses
-URL = https://mirrors.kernel.org/gnu/ncurses/ncurses-6.2.tar.gz
+URL = https://github.com/mirror/ncurses.git
 ARCHIVES = 
+ARCHIVES_GIT = 
 
 include ../common/Makefile.common

@@ -10,3 +10,6 @@
 --enable-ext-colors
 --with-pkg-config-libdir=/usr/lib64/pkgconfig
 --with-versioned-syms
+--without-tests
+--enable-colorfgbg
+--enable-hard-tabs

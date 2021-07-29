@@ -1,3 +1,19 @@
+for l in %{buildroot}/usr/lib64/libncursesw.so; do
+    soname=$(basename $(readlink $l))
+    rm -f $l
+    echo "INPUT($soname -ltinfow)" > $l
+done
+for l in %{buildroot}/usr/lib64/libncurses.so; do
+    soname=$(basename $(readlink $l))
+    rm -f $l
+    echo "INPUT($soname -ltinfo)" > $l
+done
+
+rm -f %{buildroot}/usr/lib64/libcursesw.so
+rm -f %{buildroot}/usr/lib64/libcurses.so
+echo "INPUT(-lncurses)" > %{buildroot}/usr/lib64/libcurses.so
+echo "INPUT(-lncursesw)" > %{buildroot}/usr/lib64/libcursesw.so
+
 # these utterly disgusting hacks are stolen from Fedora.
 # don't require -ltinfo when linking with --no-add-needed
 for l in $RPM_BUILD_ROOT/usr/lib64/libncursesw.so; do
