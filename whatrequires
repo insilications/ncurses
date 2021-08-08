@@ -3,6 +3,8 @@ OpenIPMI-dev
 Pacemaker-dev
 ncurses-dev
 ncurses-dev32
+ncurses-staticdev
+ncurses-staticdev32
 readline-dev
 readline-dev32
 readline-staticdev
