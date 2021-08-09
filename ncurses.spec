@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : ncurses
 Version  : 6.2
-Release  : 66
+Release  : 67
 URL      : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.2.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.2.tar.gz
 Summary  : Curses library with POSIX thread support.
@@ -13,6 +13,7 @@ Group    : Development/Tools
 License  : MIT X11
 Requires: ncurses-bin = %{version}-%{release}
 Requires: ncurses-data = %{version}-%{release}
+Requires: ncurses-data-rare = %{version}-%{release}
 Requires: ncurses-lib = %{version}-%{release}
 Requires: ncurses-lib-narrow = %{version}-%{release}
 Requires: ncurses-lib-plusplus = %{version}-%{release}
@@ -121,6 +122,14 @@ Group: Data
 data components for the ncurses package.
 
 
+%package data-rare
+Summary: data-rare components for the ncurses package.
+Group: Default
+
+%description data-rare
+data-rare components for the ncurses package.
+
+
 %package dev
 Summary: dev components for the ncurses package.
 Group: Development
@@ -222,7 +231,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1628495104
+export SOURCE_DATE_EPOCH=1628496553
 export GCC_IGNORE_WERROR=1
 ## altflags1 content
 export CFLAGS="-g3 -ggdb -O3 --param=lto-max-streaming-parallelism=16 -march=native -mtune=native -fgraphite-identity -Wall -Wl,--as-needed -Wl,--build-id=sha1 -Wl,--enable-new-dtags -Wl,--hash-style=gnu -Wl,-O2 -Wl,-z,now,-z,relro,-z,max-page-size=0x1000,-z,separate-code -Wno-error -mprefer-vector-width=256 -falign-functions=32 -flimit-function-alignment -fasynchronous-unwind-tables -fdevirtualize-at-ltrans -floop-nest-optimize -floop-block -fno-math-errno -fno-semantic-interposition -Wl,-Bsymbolic-functions -fno-stack-protector -fno-trapping-math -ftree-loop-distribute-patterns -ftree-loop-vectorize -ftree-slp-vectorize -ftree-vectorize -fuse-ld=bfd -fuse-linker-plugin -malign-data=cacheline -feliminate-unused-debug-types -fipa-pta -flto=16 -fno-plt -mtls-dialect=gnu2 -Wl,-sort-common -Wno-error -Wp,-D_REENTRANT -pipe -ffat-lto-objects -fPIC -fomit-frame-pointer -fexceptions -static-libstdc++ -static-libgcc -Wl,--build-id=sha1"
@@ -437,7 +446,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1628495104
+export SOURCE_DATE_EPOCH=1628496553
 rm -rf %{buildroot}
 pushd ../build32/
 %make_install32
@@ -1620,55 +1629,6 @@ echo "INPUT(-lncursesw)" > $RPM_BUILD_ROOT/usr/lib64/libcursesw.so
 /usr/share/terminfo/i/iTerm.app
 /usr/share/terminfo/i/iTerm2.app
 /usr/share/terminfo/i/ibcs2
-/usr/share/terminfo/i/ibm+16color
-/usr/share/terminfo/i/ibm+color
-/usr/share/terminfo/i/ibm-apl
-/usr/share/terminfo/i/ibm-pc
-/usr/share/terminfo/i/ibm-system1
-/usr/share/terminfo/i/ibm3101
-/usr/share/terminfo/i/ibm3151
-/usr/share/terminfo/i/ibm3161
-/usr/share/terminfo/i/ibm3161-C
-/usr/share/terminfo/i/ibm3162
-/usr/share/terminfo/i/ibm3163
-/usr/share/terminfo/i/ibm3164
-/usr/share/terminfo/i/ibm327x
-/usr/share/terminfo/i/ibm5051
-/usr/share/terminfo/i/ibm5081
-/usr/share/terminfo/i/ibm5081-c
-/usr/share/terminfo/i/ibm5151
-/usr/share/terminfo/i/ibm5154
-/usr/share/terminfo/i/ibm5154-c
-/usr/share/terminfo/i/ibm6153
-/usr/share/terminfo/i/ibm6153-40
-/usr/share/terminfo/i/ibm6153-90
-/usr/share/terminfo/i/ibm6154
-/usr/share/terminfo/i/ibm6154-c
-/usr/share/terminfo/i/ibm6155
-/usr/share/terminfo/i/ibm8503
-/usr/share/terminfo/i/ibm8507
-/usr/share/terminfo/i/ibm8512
-/usr/share/terminfo/i/ibm8513
-/usr/share/terminfo/i/ibm8514
-/usr/share/terminfo/i/ibm8514-c
-/usr/share/terminfo/i/ibm8604
-/usr/share/terminfo/i/ibmaed
-/usr/share/terminfo/i/ibmapa16
-/usr/share/terminfo/i/ibmapa8
-/usr/share/terminfo/i/ibmapa8c
-/usr/share/terminfo/i/ibmapa8c-c
-/usr/share/terminfo/i/ibmega
-/usr/share/terminfo/i/ibmega-c
-/usr/share/terminfo/i/ibmmono
-/usr/share/terminfo/i/ibmmpel-c
-/usr/share/terminfo/i/ibmpc
-/usr/share/terminfo/i/ibmpc3
-/usr/share/terminfo/i/ibmpc3r
-/usr/share/terminfo/i/ibmpc3r-mono
-/usr/share/terminfo/i/ibmpcx
-/usr/share/terminfo/i/ibmvga
-/usr/share/terminfo/i/ibmvga-c
-/usr/share/terminfo/i/ibmx
 /usr/share/terminfo/i/icl6402
 /usr/share/terminfo/i/icl6404
 /usr/share/terminfo/i/icl6404-w
@@ -3307,6 +3267,58 @@ echo "INPUT(-lncursesw)" > $RPM_BUILD_ROOT/usr/lib64/libcursesw.so
 /usr/share/terminfo/z/ztx
 /usr/share/terminfo/z/ztx-1-a
 /usr/share/terminfo/z/ztx11
+
+%files data-rare
+%defattr(-,root,root,-)
+/usr/share/terminfo/i/ibm+16color
+/usr/share/terminfo/i/ibm+color
+/usr/share/terminfo/i/ibm-apl
+/usr/share/terminfo/i/ibm-pc
+/usr/share/terminfo/i/ibm-system1
+/usr/share/terminfo/i/ibm3101
+/usr/share/terminfo/i/ibm3151
+/usr/share/terminfo/i/ibm3161
+/usr/share/terminfo/i/ibm3161-C
+/usr/share/terminfo/i/ibm3162
+/usr/share/terminfo/i/ibm3163
+/usr/share/terminfo/i/ibm3164
+/usr/share/terminfo/i/ibm327x
+/usr/share/terminfo/i/ibm5051
+/usr/share/terminfo/i/ibm5081
+/usr/share/terminfo/i/ibm5081-c
+/usr/share/terminfo/i/ibm5151
+/usr/share/terminfo/i/ibm5154
+/usr/share/terminfo/i/ibm5154-c
+/usr/share/terminfo/i/ibm6153
+/usr/share/terminfo/i/ibm6153-40
+/usr/share/terminfo/i/ibm6153-90
+/usr/share/terminfo/i/ibm6154
+/usr/share/terminfo/i/ibm6154-c
+/usr/share/terminfo/i/ibm6155
+/usr/share/terminfo/i/ibm8503
+/usr/share/terminfo/i/ibm8507
+/usr/share/terminfo/i/ibm8512
+/usr/share/terminfo/i/ibm8513
+/usr/share/terminfo/i/ibm8514
+/usr/share/terminfo/i/ibm8514-c
+/usr/share/terminfo/i/ibm8604
+/usr/share/terminfo/i/ibmaed
+/usr/share/terminfo/i/ibmapa16
+/usr/share/terminfo/i/ibmapa8
+/usr/share/terminfo/i/ibmapa8c
+/usr/share/terminfo/i/ibmapa8c-c
+/usr/share/terminfo/i/ibmega
+/usr/share/terminfo/i/ibmega-c
+/usr/share/terminfo/i/ibmmono
+/usr/share/terminfo/i/ibmmpel-c
+/usr/share/terminfo/i/ibmpc
+/usr/share/terminfo/i/ibmpc3
+/usr/share/terminfo/i/ibmpc3r
+/usr/share/terminfo/i/ibmpc3r-mono
+/usr/share/terminfo/i/ibmpcx
+/usr/share/terminfo/i/ibmvga
+/usr/share/terminfo/i/ibmvga-c
+/usr/share/terminfo/i/ibmx
 
 %files dev
 %defattr(-,root,root,-)
