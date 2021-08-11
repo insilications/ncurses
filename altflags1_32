@@ -1,6 +1,0 @@
-export CFLAGS="-Wl,--no-as-needed -m32 -O3 -pipe -fPIC -m32 -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
-export FCFLAGS="-Wl,--no-as-needed -m32 -O3 -pipe -fPIC -m32 -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
-export FFLAGS="-Wl,--no-as-needed -m32 -O3 -pipe -fPIC -m32 -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
-export CXXFLAGS="-Wl,--no-as-needed -m32 -O3 -fvisibility-inlines-hidden -pipe -fPIC -m32 -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
-export LDFLAGS="-Wl,--no-as-needed -m32 -O3 -pipe -fPIC -m32 -mstackrealign -fomit-frame-pointer -fstrict-aliasing -ffast-math -march=native -Wall -fexceptions"
-#
