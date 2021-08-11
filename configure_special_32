@@ -1,13 +1,13 @@
 --disable-static
---with-shared \
---with-termlib \
---enable-widec \
---with-progs \
---enable-pc-files \
---with-pkg-config=/usr/bin/pkg-config \
---with-abi-version=6 \
---enable-const \
---enable-ext-colors \
---with-pkg-config-libdir=/usr/lib32/pkgconfig \
---with-versioned-syms \
+--with-shared
+--with-termlib
+--enable-widec
+--with-progs
+--enable-pc-files
+--with-pkg-config=/usr/bin/pkg-config
+--with-abi-version=6
+--enable-const
+--enable-ext-colors
+--with-pkg-config-libdir=/usr/lib32/pkgconfig
+--with-versioned-syms
 --libdir=/usr/lib32
