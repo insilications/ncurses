@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : ncurses
 Version  : 6.3
-Release  : 217
+Release  : 218
 URL      : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.3.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.3.tar.gz
 Summary  : Curses library with POSIX thread support.
@@ -14,10 +14,10 @@ License  : MIT X11
 Requires: ncurses-bin = %{version}-%{release}
 Requires: ncurses-data = %{version}-%{release}
 Requires: ncurses-data-rare = %{version}-%{release}
+Requires: ncurses-docs = %{version}-%{release}
 Requires: ncurses-lib = %{version}-%{release}
 Requires: ncurses-lib-narrow = %{version}-%{release}
 Requires: ncurses-lib-plusplus = %{version}-%{release}
-Requires: ncurses-man = %{version}-%{release}
 BuildRequires : Sphinx
 BuildRequires : autoconf
 BuildRequires : autogen
@@ -166,6 +166,14 @@ Requires: ncurses-dev = %{version}-%{release}
 dev32 components for the ncurses package.
 
 
+%package docs
+Summary: docs components for the ncurses package.
+Group: Default
+
+%description docs
+docs components for the ncurses package.
+
+
 %package lib
 Summary: lib components for the ncurses package.
 Group: Libraries
@@ -198,14 +206,6 @@ Requires: ncurses-data = %{version}-%{release}
 
 %description lib32
 lib32 components for the ncurses package.
-
-
-%package man
-Summary: man components for the ncurses package.
-Group: Default
-
-%description man
-man components for the ncurses package.
 
 
 %package staticdev
@@ -245,7 +245,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640205078
+export SOURCE_DATE_EPOCH=1640206430
 export GCC_IGNORE_WERROR=1
 ## altflags1 content
 ## altflags1
@@ -512,7 +512,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1640205078
+export SOURCE_DATE_EPOCH=1640206430
 rm -rf %{buildroot}
 ## install_prepend_32 content
 export AR=gcc-ar
@@ -3603,64 +3603,8 @@ echo "INPUT(-lncursesw)" > $RPM_BUILD_ROOT/usr/lib64/libcursesw.so
 /usr/lib32/pkgconfig/tinfo.pc
 /usr/lib32/pkgconfig/tinfow.pc
 
-%files lib
+%files docs
 %defattr(-,root,root,-)
-/usr/lib64/libform.so.6.3
-/usr/lib64/libformw.so.6
-/usr/lib64/libformw.so.6.3
-/usr/lib64/libmenu.so.6.3
-/usr/lib64/libmenuw.so.6
-/usr/lib64/libmenuw.so.6.3
-/usr/lib64/libncurses++.so.6.3
-/usr/lib64/libncurses++w.so.6.3
-/usr/lib64/libncurses.so.6.3
-/usr/lib64/libncursesw.so.6
-/usr/lib64/libncursesw.so.6.3
-/usr/lib64/libpanel.so.6.3
-/usr/lib64/libpanelw.so.6
-/usr/lib64/libpanelw.so.6.3
-/usr/lib64/libtinfo.so.6.3
-/usr/lib64/libtinfow.so.6
-/usr/lib64/libtinfow.so.6.3
-
-%files lib-narrow
-%defattr(-,root,root,-)
-/usr/lib64/libform.so.6
-/usr/lib64/libmenu.so.6
-/usr/lib64/libncurses.so.6
-/usr/lib64/libpanel.so.6
-/usr/lib64/libtinfo.so.6
-
-%files lib-plusplus
-%defattr(-,root,root,-)
-/usr/lib64/libncurses++.so.6
-/usr/lib64/libncurses++w.so.6
-
-%files lib32
-%defattr(-,root,root,-)
-/usr/lib32/libform.so.6
-/usr/lib32/libform.so.6.3
-/usr/lib32/libformw.so.6
-/usr/lib32/libformw.so.6.3
-/usr/lib32/libmenu.so.6
-/usr/lib32/libmenu.so.6.3
-/usr/lib32/libmenuw.so.6
-/usr/lib32/libmenuw.so.6.3
-/usr/lib32/libncurses.so.6
-/usr/lib32/libncurses.so.6.3
-/usr/lib32/libncursesw.so.6
-/usr/lib32/libncursesw.so.6.3
-/usr/lib32/libpanel.so.6
-/usr/lib32/libpanel.so.6.3
-/usr/lib32/libpanelw.so.6
-/usr/lib32/libpanelw.so.6.3
-/usr/lib32/libtinfo.so.6
-/usr/lib32/libtinfo.so.6.3
-/usr/lib32/libtinfow.so.6
-/usr/lib32/libtinfow.so.6.3
-
-%files man
-%defattr(0644,root,root,0755)
 /usr/share/man/man1/captoinfo.1m
 /usr/share/man/man1/clear.1
 /usr/share/man/man1/infocmp.1m
@@ -4560,6 +4504,62 @@ echo "INPUT(-lncursesw)" > $RPM_BUILD_ROOT/usr/lib64/libcursesw.so
 /usr/share/man/man5/terminfo.5
 /usr/share/man/man5/user_caps.5
 /usr/share/man/man7/term.7
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/libform.so.6.3
+/usr/lib64/libformw.so.6
+/usr/lib64/libformw.so.6.3
+/usr/lib64/libmenu.so.6.3
+/usr/lib64/libmenuw.so.6
+/usr/lib64/libmenuw.so.6.3
+/usr/lib64/libncurses++.so.6.3
+/usr/lib64/libncurses++w.so.6.3
+/usr/lib64/libncurses.so.6.3
+/usr/lib64/libncursesw.so.6
+/usr/lib64/libncursesw.so.6.3
+/usr/lib64/libpanel.so.6.3
+/usr/lib64/libpanelw.so.6
+/usr/lib64/libpanelw.so.6.3
+/usr/lib64/libtinfo.so.6.3
+/usr/lib64/libtinfow.so.6
+/usr/lib64/libtinfow.so.6.3
+
+%files lib-narrow
+%defattr(-,root,root,-)
+/usr/lib64/libform.so.6
+/usr/lib64/libmenu.so.6
+/usr/lib64/libncurses.so.6
+/usr/lib64/libpanel.so.6
+/usr/lib64/libtinfo.so.6
+
+%files lib-plusplus
+%defattr(-,root,root,-)
+/usr/lib64/libncurses++.so.6
+/usr/lib64/libncurses++w.so.6
+
+%files lib32
+%defattr(-,root,root,-)
+/usr/lib32/libform.so.6
+/usr/lib32/libform.so.6.3
+/usr/lib32/libformw.so.6
+/usr/lib32/libformw.so.6.3
+/usr/lib32/libmenu.so.6
+/usr/lib32/libmenu.so.6.3
+/usr/lib32/libmenuw.so.6
+/usr/lib32/libmenuw.so.6.3
+/usr/lib32/libncurses.so.6
+/usr/lib32/libncurses.so.6.3
+/usr/lib32/libncursesw.so.6
+/usr/lib32/libncursesw.so.6.3
+/usr/lib32/libpanel.so.6
+/usr/lib32/libpanel.so.6.3
+/usr/lib32/libpanelw.so.6
+/usr/lib32/libpanelw.so.6.3
+/usr/lib32/libtinfo.so.6
+/usr/lib32/libtinfo.so.6.3
+/usr/lib32/libtinfow.so.6
+/usr/lib32/libtinfow.so.6.3
 
 %files staticdev
 %defattr(-,root,root,-)
