@@ -10,6 +10,9 @@
 --enable-ext-colors
 --with-pkg-config-libdir=/usr/lib64/pkgconfig
 --with-versioned-syms
---without-tests
 --enable-colorfgbg
 --enable-hard-tabs
+--enable-echo
+--disable-stripping
+--with-pcre2
+--without-tests
