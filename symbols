@@ -68,6 +68,7 @@ libform.so.6:free_fieldtype
 libform.so.6:free_form
 libform.so.6:link_field
 libform.so.6:link_fieldtype
+libform.so.6:mangle_path
 libform.so.6:move_field
 libform.so.6:new_field
 libform.so.6:new_fieldtype
@@ -173,6 +174,7 @@ libformw.so.6:free_fieldtype
 libformw.so.6:free_form
 libformw.so.6:link_field
 libformw.so.6:link_fieldtype
+libformw.so.6:mangle_path
 libformw.so.6:move_field
 libformw.so.6:new_field
 libformw.so.6:new_fieldtype
@@ -253,6 +255,7 @@ libmenu.so.6:item_term
 libmenu.so.6:item_userptr
 libmenu.so.6:item_value
 libmenu.so.6:item_visible
+libmenu.so.6:mangle_path
 libmenu.so.6:menu_back
 libmenu.so.6:menu_driver
 libmenu.so.6:menu_fore
@@ -347,6 +350,7 @@ libmenuw.so.6:item_term
 libmenuw.so.6:item_userptr
 libmenuw.so.6:item_value
 libmenuw.so.6:item_visible
+libmenuw.so.6:mangle_path
 libmenuw.so.6:menu_back
 libmenuw.so.6:menu_driver
 libmenuw.so.6:menu_fore
@@ -1298,6 +1302,9 @@ libncurses++.so.6:__cxa_throw
 libncurses++.so.6:__cxa_throw_bad_array_new_length
 libncurses++.so.6:__dynamic_cast
 libncurses++.so.6:__gcclibcxx_demangle_callback
+libncurses++.so.6:__gcov_indirect_call_profiler_v4
+libncurses++.so.6:__gcov_indirect_call_profiler_v4_atomic
+libncurses++.so.6:__gcov_topn_values_profiler_atomic
 libncurses++.so.6:__gxx_personality_v0
 libncurses++.so.6:_nc_xx_fld_ccheck
 libncurses++.so.6:_nc_xx_fld_fcheck
@@ -1314,6 +1321,7 @@ libncurses++.so.6:_nc_xx_next_choice
 libncurses++.so.6:_nc_xx_prev_choice
 libncurses++.so.6:_nc_xx_ripoff_init
 libncurses++.so.6:main
+libncurses++.so.6:mangle_path
 libncurses++w.so.6:_Z20_txnal_cow_string_D1Pv
 libncurses++w.so.6:_Z23_txnal_cow_string_c_strPKv
 libncurses++w.so.6:_Z23_txnal_sso_string_c_strPKv
@@ -2215,6 +2223,9 @@ libncurses++w.so.6:__cxa_throw
 libncurses++w.so.6:__cxa_throw_bad_array_new_length
 libncurses++w.so.6:__dynamic_cast
 libncurses++w.so.6:__gcclibcxx_demangle_callback
+libncurses++w.so.6:__gcov_indirect_call_profiler_v4
+libncurses++w.so.6:__gcov_indirect_call_profiler_v4_atomic
+libncurses++w.so.6:__gcov_topn_values_profiler_atomic
 libncurses++w.so.6:__gxx_personality_v0
 libncurses++w.so.6:_nc_xx_fld_ccheck
 libncurses++w.so.6:_nc_xx_fld_fcheck
@@ -2231,6 +2242,7 @@ libncurses++w.so.6:_nc_xx_next_choice
 libncurses++w.so.6:_nc_xx_prev_choice
 libncurses++w.so.6:_nc_xx_ripoff_init
 libncurses++w.so.6:main
+libncurses++w.so.6:mangle_path
 libncurses.so.6:COLOR_PAIR
 libncurses.so.6:NCURSES6_5.0.19991023
 libncurses.so.6:NCURSES6_5.1.20000708
@@ -2377,6 +2389,7 @@ libncurses.so.6:is_wintouched
 libncurses.so.6:isendwin
 libncurses.so.6:isendwin_sp
 libncurses.so.6:leaveok
+libncurses.so.6:mangle_path
 libncurses.so.6:mcprint
 libncurses.so.6:mcprint_sp
 libncurses.so.6:mouse_trafo
@@ -2792,6 +2805,7 @@ libncursesw.so.6:key_name
 libncursesw.so.6:killwchar
 libncursesw.so.6:killwchar_sp
 libncursesw.so.6:leaveok
+libncursesw.so.6:mangle_path
 libncursesw.so.6:mcprint
 libncursesw.so.6:mcprint_sp
 libncursesw.so.6:mouse_trafo
@@ -3127,6 +3141,7 @@ libpanel.so.6:ceiling_panel
 libpanel.so.6:del_panel
 libpanel.so.6:ground_panel
 libpanel.so.6:hide_panel
+libpanel.so.6:mangle_path
 libpanel.so.6:move_panel
 libpanel.so.6:new_panel
 libpanel.so.6:panel_above
@@ -3174,6 +3189,7 @@ libpanelw.so.6:ceiling_panel
 libpanelw.so.6:del_panel
 libpanelw.so.6:ground_panel
 libpanelw.so.6:hide_panel
+libpanelw.so.6:mangle_path
 libpanelw.so.6:move_panel
 libpanelw.so.6:new_panel
 libpanelw.so.6:panel_above
@@ -3360,6 +3376,7 @@ libtinfo.so.6:killchar
 libtinfo.so.6:killchar_sp
 libtinfo.so.6:longname
 libtinfo.so.6:longname_sp
+libtinfo.so.6:mangle_path
 libtinfo.so.6:meta
 libtinfo.so.6:napms
 libtinfo.so.6:napms_sp
@@ -3599,6 +3616,7 @@ libtinfow.so.6:killchar
 libtinfow.so.6:killchar_sp
 libtinfow.so.6:longname
 libtinfow.so.6:longname_sp
+libtinfow.so.6:mangle_path
 libtinfow.so.6:meta
 libtinfow.so.6:napms
 libtinfow.so.6:napms_sp

@@ -1,5 +1,0 @@
-#export TERMINFO=/usr/share/terminfo/
-exit 1
-make -j1 check V=1 VERBOSE=1
-make -j1 test V=1 VERBOSE=1
-make -j1 tests V=1 VERBOSE=1
