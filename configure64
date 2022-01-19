@@ -15,4 +15,4 @@
 --enable-echo
 --disable-stripping
 --with-pcre2
---without-tests
+--with-tests
