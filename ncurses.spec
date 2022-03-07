@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : ncurses
 Version  : 6.3
-Release  : 231
+Release  : 232
 URL      : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.3.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.3.tar.gz
 Summary  : No detailed summary available
@@ -242,7 +242,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646634201
+export SOURCE_DATE_EPOCH=1646636886
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
 ## pgo generate
@@ -316,14 +316,14 @@ export GTK_USE_PORTAL=1
 export DESKTOP_SESSION=plasma
 ## altflags_pgo end
 
-echo PGO Phase 1
-export CFLAGS="${CFLAGS_GENERATE}"
-export CXXFLAGS="${CXXFLAGS_GENERATE}"
-export FFLAGS="${FFLAGS_GENERATE}"
-export FCFLAGS="${FCFLAGS_GENERATE}"
-export LDFLAGS="${LDFLAGS_GENERATE}"
-export ASMFLAGS="${ASMFLAGS_GENERATE}"
-export LIBS="${LIBS_GENERATE}"
+echo PGO Phase 2
+export CFLAGS="${CFLAGS_USE}"
+export CXXFLAGS="${CXXFLAGS_USE}"
+export FFLAGS="${FFLAGS_USE}"
+export FCFLAGS="${FCFLAGS_USE}"
+export LDFLAGS="${LDFLAGS_USE}"
+export ASMFLAGS="${ASMFLAGS_USE}"
+export LIBS="${LIBS_USE}"
 %configure --enable-static \
 --without-debug \
 --with-shared \
@@ -342,10 +342,9 @@ export LIBS="${LIBS_GENERATE}"
 --enable-echo \
 --disable-stripping \
 --with-pcre2 \
---with-tests
+--without-tests
 make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
-find . -type f,l -name '*.gcno' -delete -print || :
 pushd ../build-special/
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
@@ -420,14 +419,14 @@ export GTK_USE_PORTAL=1
 export DESKTOP_SESSION=plasma
 ## altflags_pgo end
 
-echo PGO Phase 1
-export CFLAGS="${CFLAGS_GENERATE}"
-export CXXFLAGS="${CXXFLAGS_GENERATE}"
-export FFLAGS="${FFLAGS_GENERATE}"
-export FCFLAGS="${FCFLAGS_GENERATE}"
-export LDFLAGS="${LDFLAGS_GENERATE}"
-export ASMFLAGS="${ASMFLAGS_GENERATE}"
-export LIBS="${LIBS_GENERATE}"
+echo PGO Phase 2
+export CFLAGS="${CFLAGS_USE}"
+export CXXFLAGS="${CXXFLAGS_USE}"
+export FFLAGS="${FFLAGS_USE}"
+export FCFLAGS="${FCFLAGS_USE}"
+export LDFLAGS="${LDFLAGS_USE}"
+export ASMFLAGS="${ASMFLAGS_USE}"
+export LIBS="${LIBS_USE}"
 %configure --enable-static \
 --without-debug \
 --with-shared \
@@ -446,10 +445,9 @@ export LIBS="${LIBS_GENERATE}"
 --enable-echo \
 --disable-stripping \
 --with-pcre2 \
---with-tests
+--without-tests
 make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
-find . -type f,l -name '*.gcno' -delete -print || :
 pushd ../build32/
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -527,7 +525,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1646634201
+export SOURCE_DATE_EPOCH=1646636886
 rm -rf %{buildroot}
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -673,13 +671,13 @@ export QT_FONT_DPI=88
 export GTK_USE_PORTAL=1
 export DESKTOP_SESSION=plasma
 ## altflags_pgo end
-export CFLAGS="${CFLAGS_GENERATE}"
-export CXXFLAGS="${CXXFLAGS_GENERATE}"
-export FFLAGS="${FFLAGS_GENERATE}"
-export FCFLAGS="${FCFLAGS_GENERATE}"
-export LDFLAGS="${LDFLAGS_GENERATE}"
-export ASMFLAGS="${ASMFLAGS_GENERATE}"
-export LIBS="${LIBS_GENERATE}"
+export CFLAGS="${CFLAGS_USE}"
+export CXXFLAGS="${CXXFLAGS_USE}"
+export FFLAGS="${FFLAGS_USE}"
+export FCFLAGS="${FCFLAGS_USE}"
+export LDFLAGS="${LDFLAGS_USE}"
+export ASMFLAGS="${ASMFLAGS_USE}"
+export LIBS="${LIBS_USE}"
 pushd ../build-special/
 %make_install_special
 popd
@@ -755,13 +753,13 @@ export QT_FONT_DPI=88
 export GTK_USE_PORTAL=1
 export DESKTOP_SESSION=plasma
 ## altflags_pgo end
-export CFLAGS="${CFLAGS_GENERATE}"
-export CXXFLAGS="${CXXFLAGS_GENERATE}"
-export FFLAGS="${FFLAGS_GENERATE}"
-export FCFLAGS="${FCFLAGS_GENERATE}"
-export LDFLAGS="${LDFLAGS_GENERATE}"
-export ASMFLAGS="${ASMFLAGS_GENERATE}"
-export LIBS="${LIBS_GENERATE}"
+export CFLAGS="${CFLAGS_USE}"
+export CXXFLAGS="${CXXFLAGS_USE}"
+export FFLAGS="${FFLAGS_USE}"
+export FCFLAGS="${FCFLAGS_USE}"
+export LDFLAGS="${LDFLAGS_USE}"
+export ASMFLAGS="${ASMFLAGS_USE}"
+export LIBS="${LIBS_USE}"
 %make_install
 ## install_append content
 ### these utterly disgusting hacks are stolen from Fedora.
@@ -4637,67 +4635,22 @@ echo "INPUT(-lncursesw)" > $RPM_BUILD_ROOT/usr/lib64/libcursesw.so
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libform.so.6.3
-/usr/lib64/libform.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libform.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libform.so.6.3.wpa.gcno
 /usr/lib64/libformw.so.6
 /usr/lib64/libformw.so.6.3
-/usr/lib64/libformw.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libformw.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libformw.so.6.3.wpa.gcno
 /usr/lib64/libmenu.so.6.3
-/usr/lib64/libmenu.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libmenu.so.6.3.wpa.gcno
 /usr/lib64/libmenuw.so.6
 /usr/lib64/libmenuw.so.6.3
-/usr/lib64/libmenuw.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libmenuw.so.6.3.wpa.gcno
 /usr/lib64/libncurses++.so.6.3
-/usr/lib64/libncurses++.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libncurses++.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libncurses++.so.6.3.wpa.gcno
 /usr/lib64/libncurses++w.so.6.3
-/usr/lib64/libncurses++w.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libncurses++w.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libncurses++w.so.6.3.wpa.gcno
 /usr/lib64/libncurses.so.6.3
-/usr/lib64/libncurses.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libncurses.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libncurses.so.6.3.ltrans2.ltrans.gcno
-/usr/lib64/libncurses.so.6.3.ltrans3.ltrans.gcno
-/usr/lib64/libncurses.so.6.3.ltrans4.ltrans.gcno
-/usr/lib64/libncurses.so.6.3.wpa.gcno
 /usr/lib64/libncursesw.so.6
 /usr/lib64/libncursesw.so.6.3
-/usr/lib64/libncursesw.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.ltrans2.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.ltrans3.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.ltrans4.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.ltrans5.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.ltrans6.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.ltrans7.ltrans.gcno
-/usr/lib64/libncursesw.so.6.3.wpa.gcno
 /usr/lib64/libpanel.so.6.3
-/usr/lib64/libpanel.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libpanel.so.6.3.wpa.gcno
 /usr/lib64/libpanelw.so.6
 /usr/lib64/libpanelw.so.6.3
-/usr/lib64/libpanelw.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libpanelw.so.6.3.wpa.gcno
 /usr/lib64/libtinfo.so.6.3
-/usr/lib64/libtinfo.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libtinfo.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libtinfo.so.6.3.ltrans2.ltrans.gcno
-/usr/lib64/libtinfo.so.6.3.ltrans3.ltrans.gcno
-/usr/lib64/libtinfo.so.6.3.wpa.gcno
 /usr/lib64/libtinfow.so.6
 /usr/lib64/libtinfow.so.6.3
-/usr/lib64/libtinfow.so.6.3.ltrans0.ltrans.gcno
-/usr/lib64/libtinfow.so.6.3.ltrans1.ltrans.gcno
-/usr/lib64/libtinfow.so.6.3.ltrans2.ltrans.gcno
-/usr/lib64/libtinfow.so.6.3.ltrans3.ltrans.gcno
-/usr/lib64/libtinfow.so.6.3.wpa.gcno
 
 %files lib-narrow
 %defattr(-,root,root,-)
