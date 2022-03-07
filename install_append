@@ -1,4 +1,4 @@
-# these utterly disgusting hacks are stolen from Fedora.
+### these utterly disgusting hacks are stolen from Fedora.
 # don't require -ltinfo when linking with --no-add-needed
 for l in $RPM_BUILD_ROOT/usr/lib64/libncursesw.so; do
     soname=$(basename $(readlink $l))
