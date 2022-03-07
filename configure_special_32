@@ -1,4 +1,5 @@
 --disable-static
+--without-debug
 --with-shared
 --with-termlib
 --enable-widec

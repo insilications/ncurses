@@ -8,9 +8,9 @@ Version  : 6.3
 Release  : 230
 URL      : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.3.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/ncurses/ncurses-v6.3.tar.gz
-Summary  : Curses library with POSIX thread support.
+Summary  : No detailed summary available
 Group    : Development/Tools
-License  : MIT X11
+License  : MIT
 BuildRequires : Sphinx
 BuildRequires : autoconf
 BuildRequires : autogen
@@ -103,10 +103,7 @@ BuildRequires : zlib-staticdev
 Patch1: 0001-PATCH-Avoid-checking-for-existence-of-usr-lib64-pkgc.patch
 
 %description
-The ncurses library routines are a terminal-independent method of
-updating character screens with reasonable optimization.
-
-This package is used for testing ABI %{MY_ABI} with POSIX threads.
+No detailed description available
 
 %prep
 %setup -q -n ncurses
@@ -128,7 +125,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646633730
+export SOURCE_DATE_EPOCH=1646633935
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
 ## pgo generate
@@ -409,7 +406,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1646633730
+export SOURCE_DATE_EPOCH=1646633935
 rm -rf %{buildroot}
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
